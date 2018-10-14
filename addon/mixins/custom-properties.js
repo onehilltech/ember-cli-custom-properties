@@ -1,6 +1,6 @@
 import Mixin from '@ember/object/mixin';
 import CustomProperty from '../-private/custom-property';
-import { get } from '@ember/object';
+import { dasherize } from '@ember/string';
 
 const EMPTY_ARRAY = Object.freeze ([]);
 
@@ -25,7 +25,8 @@ export default Mixin.create ({
 
     // Build an array of custom properties that we are observing.
     let bindings = customProperties.reduce ((bindings, prop) => {
-      bindings.push (CustomProperty.create ({ prop, name: `--${prop}`, component: this }));
+      const name = `--${dasherize (prop)}`;
+      bindings.push (CustomProperty.create ({ prop, name, component: this }));
 
       return bindings;
     }, []);

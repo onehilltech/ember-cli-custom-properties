@@ -8,6 +8,6 @@ export default Component.extend (CustomProperties, {
 
   tagName: 'button',
 
-  customProperties: ['foo'],
+  customProperties: ['fooBar'],
   customPropertyBindings: ['bar:--custom-bar'],
 });
