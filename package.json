@@ -1,12 +1,16 @@
 {
   "name": "ember-cli-custom-properties",
   "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "Adds support for CSS custom properties (variables) to components.",
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "components",
+    "css",
+    "variables",
+    "custom properties"
   ],
-  "repository": "",
-  "license": "MIT",
+  "repository": "github:onehilltech/ember-cli-custom-properties",
+  "license": "Apache-2.0",
   "author": "",
   "directories": {
     "doc": "doc",
