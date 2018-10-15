@@ -1,0 +1,6 @@
+.o-div {
+  margin-top: 16px;
+  height: 250px;
+
+  background: var(--background-image) center / cover;
+}
