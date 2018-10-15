@@ -9,6 +9,15 @@ Installation
     ember install ember-cli-custom-properties
 
 
+Features
+----------
+
+* Maps component attributes to CSS custom properties
+* Fast, lightweight implementation
+* Only updates CSS custom properties when its bound component value changes
+* Zero configuration design
+* Production ready
+
 Usage
 ---------
 
