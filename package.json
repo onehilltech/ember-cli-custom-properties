@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-custom-properties",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Adds support for CSS custom properties (variables) to components.",
   "keywords": [
     "ember-addon",
