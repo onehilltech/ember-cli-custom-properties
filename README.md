@@ -39,6 +39,9 @@ export default Component.extend ({
 
 In the example above, `foo` is mapped to `--foo` and `fooBar` is mapped to `--foo-bar`.
 
+> Custom property values are Promise aware. This is useful when the custom property's
+> value must be computed in the background.
+
 ### Custom Property Bindings
 
 The custom properties defined in `customProperties` are automatically mapped to CSS 
