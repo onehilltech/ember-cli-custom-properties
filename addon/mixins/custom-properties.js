@@ -1,4 +1,6 @@
 import Mixin from '@ember/object/mixin';
+import { addObserver, removeObserver } from '@ember/object/observers';
+import { once } from '@ember/runloop';
 import CustomProperty from '../-private/custom-property';
 import { dasherize } from '@ember/string';
 
@@ -15,6 +17,28 @@ export default Mixin.create ({
   init () {
     this._super (...arguments);
     this._initCustomProperties ();
+
+    for (let i = 0, len = this._customProperties.length; i < len; ++ i) {
+      addObserver (this, this._customProperties[i].prop, this, this._onCustomPropertyChange);
+    }
+  },
+
+  _onCustomPropertyChange () {
+    once(this, '_updateCustomProperties');
+  },
+
+  willDestroy () {
+    this._super(...arguments);
+
+    for (let i = 0, len = this._customProperties.length; i < len; ++ i) {
+      removeObserver (this, this._customProperties[i].prop, this, this._onCustomPropertyChange);
+    }
+  },
+
+  _updateCustomProperties () {
+    for (let i = 0, len = this._customProperties.length; i < len; ++ i) {
+      this._customProperties[i].apply ();
+    }
   },
 
   _initCustomProperties () {
@@ -44,8 +68,6 @@ export default Mixin.create ({
   didRender () {
     this._super (...arguments);
 
-    for (let i = 0, len = this._customProperties.length; i < len; ++ i) {
-      this._customProperties[i].apply ();
-    }
-  }
+    this._updateCustomProperties();
+  },
 });
