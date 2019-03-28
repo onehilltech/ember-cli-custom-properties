@@ -14,6 +14,8 @@ export default Mixin.create ({
 
   init () {
     this._super (...arguments);
+
+    // Initialize the custom properties.
     this._initCustomProperties ();
   },
 
@@ -41,11 +43,11 @@ export default Mixin.create ({
     this._customProperties = bindings;
   },
 
-  didRender () {
+  willDestroyElement () {
     this._super (...arguments);
 
     for (let i = 0, len = this._customProperties.length; i < len; ++ i) {
-      this._customProperties[i].apply ();
+      this._customProperties[i].destroy ();
     }
   }
 });

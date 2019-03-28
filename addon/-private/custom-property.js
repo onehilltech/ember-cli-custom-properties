@@ -1,25 +1,36 @@
 import CoreObject from '@ember/object/core';
 import { isPresent } from '@ember/utils';
 import { resolve } from 'rsvp';
+import { addObserver, removeObserver } from '@ember/object/observers';
 
 export default CoreObject.extend ({
+  /// The component to apply the custom property.
+  component: null,
+
   /// The property name in the component.
   prop: null,
 
   /// The target custom property name (i.e., css variable).
   name: null,
 
-  /// The component to apply the custom property.
-  component: null,
+  init () {
+    this._super (...arguments);
 
-  apply () {
+    // Observe changes to the components value.
+    addObserver (this.component, this.prop, this, this.refresh);
+
+    // Apply the initial value.
+    this.refresh ();
+  },
+
+  destroy () {
+    removeObserver (this.component, this.prop, this, this.refresh);
+  },
+
+  refresh () {
     const value = this.component.get (this.prop);
 
     resolve (value).then (value => {
-      if (this._value === value) {
-        return;
-      }
-
       // The property value changed. We need to update the style property to reflect
       // the changes. Make sure to save the new value for the next change.
       const { element } = this.component;
@@ -30,8 +41,6 @@ export default CoreObject.extend ({
       else {
         element.style.removeProperty (this.name);
       }
-
-      this._value = value;
     });
   }
 });
