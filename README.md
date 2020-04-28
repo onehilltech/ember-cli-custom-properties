@@ -3,6 +3,15 @@ ember-cli-custom-properties
 
 Adds support for CSS custom properties (variables) to components
 
+
+Compatibility
+------------------------------------------------------------------------------
+
+* Ember.js v3.12 or above
+* Ember CLI v2.13 or above
+* Node.js v10 or above
+
+
 Installation
 -------------
 
@@ -29,8 +38,6 @@ declare what properties on the component automatically map to CSS custom propert
 
 ```javascript
 import Component from "@ember/component";
-
-// ...
 
 export default Component.extend ({
   customProperties: ['foo', 'fooBar']
@@ -65,7 +72,5 @@ Now, when you set the `height` property on this component, it will map to the
 
 You remove a CSS custom property value by simply setting its bound component
 property to `null` or `undefined`.
-
-
 
 Happy Coding!
