@@ -21,6 +21,7 @@ Installation
 Features
 ----------
 
+* Uses modifiers to apply custom properties
 * Maps component attributes to CSS custom properties
 * Fast, lightweight implementation
 * Only updates CSS custom properties when its bound component value changes
