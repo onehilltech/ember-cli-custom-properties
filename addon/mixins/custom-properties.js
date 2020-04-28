@@ -23,7 +23,7 @@ export default Mixin.create ({
     let {
       customProperties,
       customPropertyBindings
-    } = this.getProperties (['customProperties', 'customPropertyBindings']);
+    } = this;
 
     // Build an array of custom properties that we are observing.
     let bindings = customProperties.reduce ((bindings, prop) => {

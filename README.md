@@ -27,8 +27,25 @@ Features
 * Zero configuration design
 * Production ready
 
-Usage
----------
+Usage: Ember 2.17 or later
+-----------------------------
+
+Starting with Ember 2.17 or later, we switched to using modifiers to set custom properties 
+on an element. This design decision makes it a lot easier to apply a custom property at any
+level of the application, including top-level templates.
+
+Here is the new an improved way for setting a custom property. You just need to make sure 
+the variables passed into the modifier is tracked.
+
+```handlebars
+<div {{custom-property "--background-image" backgroundImage}}></div>
+```
+
+The first parameter to the modifier is the custom property in from your CSS file. The second
+parameter is the value of the custom property.
+
+Usage: Ember 2.16 or earlier
+-----------------------------
 
 There is no extra installation steps need to use this add-on. It will automatically
 reopen the `Component` class an apply the `CustomProperties` mixin.

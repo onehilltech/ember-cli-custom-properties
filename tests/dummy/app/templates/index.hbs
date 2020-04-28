@@ -1,7 +1,9 @@
-{{#o-button foo=foo bar=bar}}Button{{/o-button}}
+<OButton @foo={{foo}} @bar={{bar}}>Button</OButton>
 
 <button onclick={{action (mut foo) 10}}>Set Foo</button>
 <button onclick={{action (mut bar) null}}>Clear Bar</button>
 
 
-{{o-div backgroundImage=backgroundImage}}
+<ODiv @backgroundImage={{backgroundImage}} />
+
+<div class="o-div" {{custom-property "--background-image" backgroundImage}}></div>
