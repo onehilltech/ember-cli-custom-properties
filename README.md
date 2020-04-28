@@ -18,7 +18,7 @@ Features
 * Zero configuration design
 * Production ready
 
-Usage: Ember 2.17 or later
+Usage: Ember 2.17 and above
 -----------------------------
 
 Starting with Ember 2.17 or later, we switched to using modifiers to set custom properties 
