@@ -1,7 +1,7 @@
 ember-cli-custom-properties
 ==============================================================================
 
-Adds support for CSS custom properties (variables) to components
+Adds support for CSS custom properties (variables) to your application
 
 Installation
 -------------
