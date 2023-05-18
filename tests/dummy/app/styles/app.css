@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 .o-div {
   margin-top: 16px;
   height: 250px;
 
   background: var(--background-image) center / cover;
 }
+=======
+/* Ember supports plain CSS out of the box. More info: https://cli.emberjs.com/release/advanced-use/stylesheets/ */
+>>>>>>> a210bc8 (v3.17.0...v4.12.1)

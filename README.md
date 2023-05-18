@@ -1,5 +1,4 @@
-ember-cli-custom-properties
-==============================================================================
+# ember-cli-custom-properties
 
 Adds support for CSS custom properties (variables) to your application
 
