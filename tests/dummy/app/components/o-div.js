@@ -1,10 +1,5 @@
-import Component from '@ember/component';
-import layout from '../templates/components/o-div';
+import Component from "@glimmer/component";
 
-export default Component.extend({
-  layout,
+export default class ODivComponent extends Component {
 
-  classNames: ['o-div'],
-
-  customProperties: ['backgroundImage']
-});
+}
